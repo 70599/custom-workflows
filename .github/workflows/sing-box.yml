@@ -2,6 +2,11 @@ name: sing-box
 
 on:
   workflow_dispatch:
+    inputs:
+      ref:
+        description: 'branch or sha'
+        required: false
+        default: dev-next
 
 jobs:
   cross:
@@ -39,7 +44,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: SagerNet/sing-box
-          ref: dev-next
+          ref: ${{ github.event.inputs.ref }}
           fetch-depth: 0
       - name: Get latest go version
         id: version
