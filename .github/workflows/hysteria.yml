@@ -1,4 +1,4 @@
-name: "Build master"
+name: hysteria
 
 on:
   workflow_dispatch:
