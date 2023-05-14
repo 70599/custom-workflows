@@ -19,15 +19,20 @@ jobs:
       with:
         repository: unisat-wallet/extension
         fetch-depth: 0
-    - name: Setup Yarn
-      uses: mskelton/setup-yarn@v1
+    - name: Set Node.js 14.x
+      uses: actions/setup-node@v3
       with:
-        node-version: '14.x'
-    - name: Build
-      run: yarn build:${{ github.event.inputs.browser }}
+        node-version: 14.x
+    - name: Install yarn
+      uses: borales/actions-yarn@v4
+      with:
+        cmd: install
+    - name: Build production bundle
+      uses: borales/actions-yarn@v4
+      with:
+        cmd: build:${{ github.event.inputs.browser }}
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
         name: unisat-${{ github.event.inputs.browser }}
-        path: ./dist/
-        
+        path: ./dist/        
