@@ -36,7 +36,7 @@ jobs:
 
       - name: Run build script
         env:
-          HY_APP_PLATFORMS: 'linux/amd64,linux/amd64-avx,linux/arm64'
+          HY_APP_PLATFORMS: 'linux/amd64-avx,linux/arm64'
         run: python ./hyperbole.py build
         shell: bash
 
