@@ -33,15 +33,18 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: ${{ steps.version.outputs.go_version }}
+      - name: Setup Python # This is for the build script
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
       - name: Run build script
         env:
           HY_APP_PLATFORMS: 'linux/amd64,linux/arm64'
-        run: python ./hyperbole.py build
-        shell: bash
+        run: 'python ./hyperbole.py build -r'
 
       - name: Archive
         uses: actions/upload-artifact@v3
         with:
-          name: hysteria-binaries-${{ github.sha }}
-          path: ./build
+          name: hy2-wip-${{ github.sha }}
+          path: build
