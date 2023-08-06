@@ -41,6 +41,7 @@ jobs:
       - name: Run build script
         env:
           HY_APP_PLATFORMS: 'linux/amd64,linux/arm64'
+          CGO_ENABLED: 0
         run: 'python ./hyperbole.py build -r'
 
       - name: Archive
