@@ -19,11 +19,14 @@ jobs:
     steps:
 
       - name: Check out
+        id: hy_sha
         uses: actions/checkout@v3
         with:
           repository: apernet/hysteria
           ref: ${{ github.event.inputs.ref }}
           fetch-depth: 0
+      - run: |
+          echo hy_sha=${git rev-parse HEAD}
 
       - name: Get latest go version
         id: version
@@ -47,5 +50,5 @@ jobs:
       - name: Archive
         uses: actions/upload-artifact@v3
         with:
-          name: hy2-wip-${{ github.sha }}
+          name: hy2-wip-${{ steps.hy_sha.outputs.hy_sha }}
           path: build
