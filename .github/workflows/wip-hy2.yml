@@ -26,7 +26,7 @@ jobs:
           ref: ${{ github.event.inputs.ref }}
           fetch-depth: 0
       - run: |
-          echo hy_sha=$(git rev-parse HEAD)
+          echo hy_sha=$(git rev-parse HEAD) >> $GITHUB_OUT
 
       - name: Get latest go version
         id: version
