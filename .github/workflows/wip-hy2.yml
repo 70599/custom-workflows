@@ -28,7 +28,7 @@ jobs:
       - name: Get commit sha
         id: hy_sha
         run: |
-          echo hy_sha=$(git rev-parse HEAD) >> $GITHUB_OUT
+          echo hy_sha=$(git rev-parse HEAD) >> $GITHUB_OUTPUT
 
       - name: Get latest go version
         id: version
