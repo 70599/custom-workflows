@@ -18,12 +18,12 @@ jobs:
             goos: linux
             goarch: amd64
             goamd64: v1
-            tags: with_low_memory,with_quic,with_gvisor,with_wireguard,with_reality_server
+            tags: with_low_memory,with_quic,with_gvisor,with_wireguard,with_reality_server,with_ech
           - name: linux-amd64-v3
             goos: linux
             goarch: amd64
             goamd64: v3
-            tags: with_low_memory,with_quic,with_gvisor,with_wireguard,with_reality_server
+            tags: with_low_memory,with_quic,with_gvisor,with_wireguard,with_reality_server,with_ech
           - name: linux-arm64
             goos: linux
             goarch: arm64
