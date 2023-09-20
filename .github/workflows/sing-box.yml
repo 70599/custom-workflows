@@ -27,7 +27,7 @@ jobs:
           - name: linux-arm64
             goos: linux
             goarch: arm64
-            tags: with_low_memory,with_quic,with_utls,with_ech,with_clash_api
+            tags: with_low_memory,with_quic,with_gvisor,with_wireguard,with_utls,with_ech,with_clash_api
     
       fail-fast: false
     runs-on: ubuntu-latest
